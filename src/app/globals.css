@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Frutiva Brand Colors */
+  --color-frutiva-primary: #2D5A27;
+  --color-frutiva-primary-light: #4A7C23;
+  --color-frutiva-accent: #E76F51;
+  --color-frutiva-accent-warm: #F4A261;
+  --color-frutiva-cream: #FDFBF7;
+  --color-frutiva-dark: #1A2E1A;
+  --color-frutiva-leaf: #81B622;
+  --color-frutiva-lime: #C5D86D;
+  
+  /* Semantic Tokens */
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  
+  /* Typography */
+  --font-display: var(--font-dm-serif);
+  --font-body: var(--font-plus-jakarta);
+  --font-sans: var(--font-plus-jakarta);
+  
+  /* Custom spacing */
+  --spacing-section: 8rem;
+  --spacing-section-sm: 5rem;
+  
+  /* Animation curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+:root {
+  --background: #FDFBF7;
+  --foreground: #1C1917;
+  --surface: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+  --muted: #F5F5F4;
+  --muted-foreground: #78716C;
+  --border: #E7E5E4;
+  --ring: #2D5A27;
+  --radius: 1.25rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background: rgba(45, 90, 39, 0.2);
+    color: #1C1917;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gradient-frutiva {
+    background: linear-gradient(135deg, #2D5A27 0%, #4A7C23 50%, #81B622 100%);
+  }
+  
+  .gradient-warm {
+    background: linear-gradient(135deg, #E76F51 0%, #F4A261 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #2D5A27 0%, #4A7C23 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .glass-dark {
+    background: rgba(26, 46, 26, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+  }
+  
+  .shadow-elevated {
+    box-shadow: 0 12px 48px -12px rgba(0, 0, 0, 0.12), 0 4px 16px -4px rgba(0, 0, 0, 0.06);
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 40px -10px rgba(45, 90, 39, 0.3);
+  }
+}
